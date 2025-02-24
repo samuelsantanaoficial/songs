@@ -1,0 +1,439 @@
+\documentclass[10pt,a5paper,openany]{book}
+\usepackage[bookmarks]{hyperref}
+\usepackage[outer=1.0cm,inner=1.8cm,top=1.8cm,bottom=1.5cm]{geometry}
+\usepackage[portuguese]{babel}
+
+% Pacote para canções e configuração de layout
+\usepackage[chorded,onesongcolumn]{songs}
+
+% Configuração do cabeçalho e rodapé com fancyhdr
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[LE,RO]{\sffamily\small Songbook Legião Urbana - Real Sigma Music} % Cabeçalho dinâmico
+\fancyfoot[C]{\sffamily\thepage} % Número de página centralizado no rodapé
+\renewcommand{\headrulewidth}{1pt} % Linha horizontal no cabeçalho
+\renewcommand{\footrulewidth}{1pt} % Linha horizontal no rodapé
+\pagestyle{fancy}
+
+% Configuração do hyperref (links sem cores e sem bordas)
+\hypersetup{
+	colorlinks=false,
+	pdfborder={0 0 0}
+}
+
+% Personalização dos índices do pacote songs
+\renewcommand{\idxheadfont}{\sffamily\bfseries\LARGE} % Cabeçalho do índice
+\renewcommand{\idxtitlefont}{\sffamily\normalsize} % Título das músicas no índice
+
+% Personalização do layout do songbook
+\setlength{\songnumwidth}{1cm} % Largura da caixa de número da música
+\renewcommand{\stitlefont}{\sffamily\bfseries\LARGE} % Fonte do título da música
+\renewcommand{\extendprelude}{%
+	\sffamily\small % Tamanho da fonte do prelude
+	\showrefs % Exibe referências bíblicas
+	\showauthors % Exibe autores
+	{\sffamily\songcopyright\par}%
+}
+\renewcommand{\makepostlude}{\resettitles} % Limpa títulos ao final da música
+
+% Configuração das fontes e espaçamentos para acordes e letras
+\renewcommand{\printchord}[1]{\sffamily\bfseries\normalsize#1} % Fonte dos acordes
+\renewcommand{\lyricfont}{\sffamily\normalsize} % Fonte da letra
+\renewcommand{\clineparams}{\baselineskip=10pt} % Espaço entre acorde e letra
+\renewcommand{\sharpsymbol}{\ensuremath{\sharp}} % Símbolo de sustenido
+\renewcommand{\flatsymbol}{\ensuremath{\flat}} % Símbolo de bemol
+
+% Outras configurações do pacote songs
+\setlength{\cbarwidth}{1pt}  % Largura da barra vertical (usada em choros)
+\setlength{\sbarheight}{0pt} % Altura da barra horizontal entre músicas
+
+% Definição do índice para as músicas
+\newindex{index}{index}
+
+\begin{document}
+	
+	\title{\rmfamily\bfseries\Huge Songbook \\ Legião Urbana 
+		\vfill
+		\sffamily\small Real Sigma Music
+	}
+	\author{\sffamily\small por; Samuel Santana}
+	\date{\sffamily\small\today}
+	
+	\maketitle
+	
+	\thispagestyle{empty}
+	\cleardoublepage
+	
+	\showindex[1]{\sffamily Índice}{index}
+	\indexsongsas{index}{\thepage}
+	
+	\begin{songs}{index}
+		
+		\beginsong{Será}[
+		by={Dado Villa-Lobos, Marcelo Bonfá, Renato Russo e Renato Rocha},
+		cr={Álbum: Legião Urbana (1985)}]
+		
+		\beginverse*
+		{\nolyrics Introdução: \[C G Am F]} \rep{2} \\
+		\endverse
+		
+		\beginverse
+		\[C] Tire suas \[G]mãos de mim \[Am] eu não per\[F]tenço a você \\
+		\[C] Não é me domi\[G]nando assim \[Am] que você \[F]vai me entender \\
+		\[C] Eu posso estar so\[G]zinho \[Am] mas, eu sei muito \[F]bem aonde estou \\
+		\[Am] Você pode até \[G]duvidar \[F] acho que isso não \[G]é amor \\
+		\endverse
+		
+		\beginverse*
+		{\nolyrics Arranjo: \[C F G]} \rep{4} \\
+		\endverse
+		
+		\beginchorus
+		\[G]Será só imagina\[Dm]ção \\
+		\[G]Será que nada vai a\[Dm]contecer \\
+		\[G]Será que é tudo isso em \[Dm]vão \\
+		\[G]Será que vamos conse\[Dm]guir venc\[Am]er ô\[F]ôôôô\[G]ô \\
+		\endchorus
+		
+		\beginverse*
+		{\nolyrics Arranjo: \[C F G]} \rep{4} \\
+		\endverse
+		
+		\beginverse
+		\[C] Nos perderemos entre \[G]monstros \[Am] da nossa própria \[F]criação \\
+		\[C] Serão noites in\[G]teiras \[Am] talvez por medo da es\[F]curidão \\
+		\[C] Ficaremos acor\[G]dados \[Am] imaginando alguma \[F]solução \\
+		\[Am] Pra que esse nosso ego\[G]ísmo \[F] não destrua nosso \[G]coração \\
+		\endverse
+		
+		\beginverse*
+		{\nolyrics Arranjo: \[C F G]} \rep{4} \\
+		\endverse
+		
+		\newpage
+		
+		\beginchorus
+		\[G]Será só imagina\[Dm]ção \\
+		\[G]Será que nada vai a\[Dm]contecer \\
+		\[G]Será que é tudo isso em \[Dm]vão \\
+		\[G]Será que vamos conse\[Dm]guir venc\[Am]er ô\[F]ôôôô\[G]ô \\
+		\endchorus
+		
+		\beginverse
+		Bri\[C]gar pra quê, se é \[G/B]sem querer \\
+		Quem \[B&]é que vai nos \[Dm]proteger \\
+		Se\[C]rá que vamos ter que \[G/B]responder \\
+		Pelos \[B&]erros a mais \[Dm]Eu e você \\
+		\endverse
+		
+		\beginverse*
+		{\nolyrics Final: \[G F] \rep{4} \[F]} \\
+		\endverse
+		
+		\section*{}
+		\gtab{C}{X32010:032010}
+		\gtab{Dm}{XX0231:000231}
+		\gtab{F}{XX32(11):003211}
+		\gtab{G}{320033:210034}
+		\gtab{G/B}{X20033:010034}
+		\gtab{Am}{X02210:002310}
+		\gtab{B&}{X(13331):012341}
+		
+		\endsong
+		
+		\beginsong{Pais e Filhos}[
+		by={Dado Villa-Lobos, Marcelo Bonfá e Renato Russo},
+		cr={Álbum: As Quatro Estações (1989)}]
+		
+		\beginverse*
+		{\nolyrics Introdução: \[C D G]} \rep{4} \\
+		\endverse
+		
+		\beginverse
+		Es\[C]tátuas e \[D] cofres e pa\[G]redes pintadas ninguém \[C]sabe o que \[D]aconte\[G]ceu \\
+		\[C]Ela se \[D]jogou da ja\[G]nela do quinto andar \[C]nada é fácil \[D]de enten\[G]der \[C D] \\
+		\endverse
+		
+		\beginverse*
+		\[Fadd9]   Dorme a\[Em]gora \[C] \\
+		\[Bm7]Uhmhum! \[Am7] é só o vento lá \[D]fora \\
+		\endverse
+		
+		\beginverse
+		\[C] Quero \[D] colo, \[G]Vou fugir de casa, p\[C]osso dor\[D]mir aqui \[G]com vocês \\
+		\[C] Estou \[D]com medo \[G]tive um pesadelo, \[C] só vou \[D]Voltar depois \[G] das três \[C D] \\
+		\endverse
+		
+		\beginverse*
+		\[Fadd9]  Meu \[Em]filho vai ter \[C] \\ 
+		Nome de \[Bm7]santo \[Am7]Uhmhum! quero o nome mais \[D] bonito \\
+		\endverse
+		
+		\beginchorus
+		É pre\[G]ciso ama - \[C]ar as pessoas \\
+		Como \[Em]se não houvesse ama\[C]nhã \\
+		Porque se \[G]você para - \[C]ar pra pensar \\
+		\[Em] Na verdade não \[C]há \\
+		\endchorus
+		
+		\beginverse
+		\[C] Me diz\[D], \[G] por que que o céu\[C] é  a\[D]zul \\
+		\[G] Explica a grande \[C]fúria \[D]do mundo \[G] \[C D G] \\
+		São meus \[C]filhos que \[D] tomam \[G]conta de mim \[C D G] \\
+		Eu moro com a \[C]minha mãe\[D] mas meu pai \[G]vem me visitar \[C D G] \\
+		Eu moro na \[C] rua não \[D] tenho nin\[G]guém  \\
+		Eu \[C]moro em qualquer \[D] lugar \[G] \\
+		Já mo\[C]rei em tanta \[D] casa que nem \[G] me lembro mais \\
+		\endverse
+		
+		\beginverse*
+		\[C] Eu moro \[D] com os meus \[Fadd9]pais \[Em] \[C] \[Bm7]Uhmhum! \[Am7] \[D]ouh!\\
+		\endverse
+		
+		\beginchorus
+		É pre\[G]ciso ama - \[C]ar as pessoas \\
+		Como \[Em]se não houvesse ama\[C]nhã \\
+		Porque se \[G]você para - \[C]ar pra pensar \\
+		\[Em] Na verdade não \[C]há \\
+		\endchorus
+		
+		\beginchorus
+		\[G]Sou uma gota d'água\[C] \\
+		\[Em]Sou um grão de areia - \[C]a \\
+		Você me \[G]diz que seus pais não en\[C]tendem \\
+		Mas vo\[Em]cê não entende seus \[C] pais \\
+		\endchorus
+		
+		\beginverse
+		Você \[C]culpa seus \[D] pais por \[G]tudo, \[C]Isso é a\[D]bsurdo \[G] \\
+		São cri\[C]anças \[D] como vo\[G]cê. \\
+		O que vo\[C]cê vai \[G]ser quando vo\[G]cê crescer? \\
+		\endverse
+		
+		\beginverse*
+		{\nolyrics Final: \[C D G]} \rep{4} \\
+		\endverse
+		
+		\section*{}
+		\gtab{C}{X32010:032010}
+		\gtab{D}{XX0232:000132}
+		\gtab{Em}{022000:012000}
+		\gtab{Fadd9}{XX3213:003214}
+		\gtab{G}{320033:320034}
+		\gtab{Am7}{X02010:002010}
+		\gtab{Bm7}{X(24232):014121}
+		
+		\endsong
+		
+		\beginsong{Tempo Perdido}[
+		by={Renato Russo},
+		cr={Álbum: Dois (1986)}]
+		
+		\beginverse*
+		{\nolyrics Introdução: \[C Am7 Bm7 Em7]} \\
+		\endverse
+		
+		\beginverse
+		Todos os \[C]dias quando acordo \[Am7] \\
+		\[Bm7] Não tenho mais o \[Em7]tempo que passou \\
+		Mas tenho \[C]muito tempo \[Am7] \\
+		Temos \[Bm7]todo o tempo do \[Em7]mundo \\
+		\[C] Todos os dias \[Am7]antes de dormir 
+		\[Bm7]Lembro e esqueço como foi o \[Em7]dia \\
+		\[C]Sempre em frente\[Am7] \\
+		Não \[Bm]temos tempo a per\[Em7]der \\
+		Nosso su\[C]or sagrado\[Am7] \\
+		É bem mais \[Bm7]belo que esse sangue a\[Em7]margo \\
+		E tão \[C]sério - \[Am7]o \\
+		\endverse
+		
+		\beginverse*
+		E sel\[Bm7]va\[Em7]gem \rep{3} \\
+		{\nolyrics Solo: \[Em7 Bm7] \rep{4} \[ Em7]} \\
+		\endverse
+		
+		\beginverse
+		\[C]Veja o sol dessa ma\[Am7]nhã tão cinza \[Bm7] \\
+		A tempes\[Em7]tade que chega é da \[C]cor dos teus olhos\[Am7] \\
+		Cas\[Bm7]ta\[Em7]nhos \\
+		Então me a\[C]braça forte\[Am7] e \[Bm7]diz mais uma vez \\
+		Que já es\[Em7]tamos dis\[C]tantes de \[Am7]tudo \\
+		\endverse
+		
+		\beginverse*
+		\[Bm7]Temos nosso próprio \[Em7]tempo \rep{3} \\
+		\endverse
+		
+		\beginverse
+		Não \[C]tenho medo \[Am7] do escuro \\
+		\[Bm7] Mas deixe \[Em7]   as luzes \[C]  acesas \[Am7] \\
+		Ag\[Bm7]o\[Em7]ra! \\
+		O que \[C]foi escondido é o \[Am7]que se escondeu
+		E o que \[Bm7]foi prometido nin\[Em7]guém prometeu \\
+		Nem foi \[C]tempo perdido\[Am7] \\
+		\endverse
+		
+		\beginverse*
+		Somos tão \[Bm7]jo\[Em7]vens \rep{3} \\
+		\endverse
+		
+		\beginverse*
+		{\nolyrics Final: \[C Am7 Bm7 Em7] \rep{4}} \\
+		\endverse
+		
+		\section*{}
+		\gtab{C}{X32010:032010}
+		\gtab{Em7}{022030:012030}
+		\gtab{Am7}{X02010:002010}
+		\gtab{Bm7}{X(24232):014121}
+		\endsong
+		
+		\beginsong{Ainda É Cedo}[
+		by={Renato Russo, Dado Villa-Lobos, Marcelo Bonfá e Ico Ouro-Preto},
+		cr={Álbum: Legião Urbana 1985)}]
+		
+		\beginverse*
+		{\nolyrics Introdução: \[Dm C Am]} \rep{4} \\
+		\endverse
+		
+		\beginverse
+		Uma menina me ensi\[Dm]nou \[C] quase tudo que eu \[Am]sei \\
+		Era quase escravi\[Dm]dão mas \[C]ela me tratava como um \[Am]rei \\
+		
+		Ela fazia muitos \[Dm]planos \[C] eu só queria estar a\[Am]li \\
+		Sempre ao lado dela\[Dm] eu não \[C]tinha onde \[Am]ir \\
+		\endverse
+		
+		\beginverse
+		Mas egoísta que eu \[Dm]sou, \[C] me esqueci de aju\[Am]dar \\
+		A ela como ela me aju\[Dm]dou, \[C] e não quis me sepa\[Am]rar \\
+		Ela também estava per\[Dm]dida, e por \[C]isso se agarrava a mim tam\[Am]bém \\
+		E eu me agarrava a ela,\[Dm] porque eu não \[C]tinha mais ninguém \[Am] \\
+		\endverse
+		
+		\beginchorus
+		E eu dizia: Ainda é \[Dm]cedo, cedo, \[C]cedo, cedo, \[Am]cedo \\
+		E eu dizia: Ainda é \[Dm]cedo, cedo, \[C]cedo, cedo, \[Am]cedo \\
+		Ah eu dizia: Ainda é \[Dm]cedo, cedo, \[C]cedo, cedo, \[Am]cedo
+		Ah eu dizia: Ainda é \[Dm]cedo \[C]\[Am]
+		\endchorus
+		
+		\beginverse*
+		{\nolyrics Solo: \[Dm C Am]} \rep{4} \\
+		\endverse
+		
+		\beginverse
+		Sei que ela termi\[Dm]nou \[C] o que eu não come\[Am]cei \\
+		E o que ela desco\[Dm]briu \[C] eu aprendi também, eu \[Am]sei \\
+		Ela falou: Você tem \[Dm]medo, aí eu \[C]disse: Quem tem medo é vo\[Am]cê \\
+		Falamos o que não de\[Dm]via nunca ser \[C]dito por ninguém\[Am] \\
+		Ela me disse: Eu não \[Dm]sei \[C] mais o que eu  sinto por vo\[Am]cê \\
+		Vamos dar um te\[Dm]mpo um \[C]dia a gente se vê\[Am] \\
+		\endverse
+		
+		\beginchorus
+		E eu dizia: Ainda é \[Dm]cedo, cedo, \[C]cedo, cedo, \[Am]cedo \\
+		E eu dizia: Ainda é \[Dm]cedo, cedo, \[C]cedo, cedo, \[Am]cedo \\
+		Ah eu dizia: Ainda é \[Dm]cedo, cedo, \[C]cedo, cedo, \[Am]cedo
+		Ah eu dizia: Ainda é \[Dm]cedo \[C]\[Am]
+		\endchorus
+		
+		\beginverse*
+		{\nolyrics Solo final: \[Dm C Am]} \rep{8} \\
+		\endverse
+		
+		\section*{}
+		\gtab{C}{X32010:032010}
+		\gtab{Dm}{XX0231:000231}
+		\gtab{Am}{X02210:002310}
+		
+		\endsong
+		
+		\beginsong{Vento No Litoral}[
+		by={Renato Russo},
+		cr={Álbum: V (1991)}]
+		
+		\beginverse*
+		{\nolyrics Introdução: \[Am  Em  Am  Em F  C  F  C] } \\
+		\endverse
+		
+		\beginverse
+		De \[Am]tarde quero descansar, che\[Em]gar até a praia e ver \\
+		Se o \[Am]vento ainda está forte, e vai ser \[Em]bom subir nas pedras \\
+		Sei que \[C]faço isso pra esquecer, eu \[B&sus2]deixo a onda me acertar \\
+		E o \[Am]vento vai levando tudo em\[F]bor\[G]a \\
+		\endverse
+		
+		\beginverse*
+		{\nolyrics Arranjo: \[Am F G C] } \\
+		\endverse
+		
+		\beginverse
+		\[F] Agora está tão \[Em]longe ver a linha do hori\[Dm]zonte me distrai \\
+		Dos nossos \[(G]planos \[Am] é que \[G/B)]tenho mais sau\[F]dade \\
+		Quando olhávamos \[Em]juntos na mesma direção \[Dm] \\
+		Aonde es\[B&sus2]tá você agora além de a\[Am]qui dentro de \[F]mim?\[G] 
+		\endverse
+		
+		\beginverse*
+		{\nolyrics Arranjo: \[F  G  Am] \rep{2}} \\
+		{\nolyrics Solo: \[Am  Em  Am  Em C B&sus2 Am F G Am F G]} \\
+		\endverse
+		
+		\beginverse*
+		\[Cm] Agimos certo sem querer 
+		\[G/B] Foi só o tempo que errou
+		\[Gm7/B&] Vai ser difícil sem você
+		Porq\[A7sus4]ue você está co\[A7]migo o tempo \[Dm]todo quando vejo o mar \\
+		\[C] Existe algo que diz:
+		A \[G/B]vida conti\[Am]nua e se entre\[G]gar é uma bo\[F]bagem
+		\endverse
+		
+		\beginchorus
+		\[Em]Já que vo\[A7]cê não está aqui \[Dm] \\
+		O que posso fazer \[Dm/C] é cui\[B&sus2]dar de mim\[G] \\
+		Quero \[C]ser feliz ao menos \[F]
+		Lembra que o \[B&sus2]plano era fi\[G]carmos bem?
+		\endchorus
+		
+		\beginverse*
+		\[Am]Eieieieiei \[Em]  olha só o que eu a\[Am]chei \[(G Am G/B G/D)] \\
+		\[C]  Cavalos-marinhos\[F]\[Esus4]\[E] \\
+		\endverse
+		
+		\beginverse*
+		{\nolyrics Solo: \[Am  Em  Am  Em]} \\
+		\endverse
+		
+		\beginverse
+		Sei que \[C]faço isso pra esquecer, eu \[B&sus2]deixo a onda me acertar \\
+		E o \[Am]vento vai levando tudo em\[F]bor\[G]a \\
+		\endverse
+		
+		\beginverse*
+		{\nolyrics Final: \[C F]} \rep{4} \\
+		\endverse
+		
+		\section*{}
+		\gtab{C}{X32010:032010}
+		\gtab{Cm}{3:X(13321):014321}
+		\gtab{Dm}{XX0231:000231}
+		\gtab{Dm/C}{X3X231:040231}
+		\gtab{E}{022100:023100}
+		\gtab{Esus4}{022200:023400}
+		\gtab{Em}{022000:012000}
+		\gtab{F}{XX32(11):003211}
+		\gtab{G}{320033:210034}
+		\gtab{G/D}{3:X3321X:034210}
+		\gtab{G/B}{X20033:010034}
+		\gtab{Gm7/B&}{X1X333:010234}
+		\gtab{A7}{X02020:002030}
+		\gtab{A7sus4}{X02030:002040}
+		\gtab{Am}{X02210:002310}
+		\gtab{B&sus2}{X(13311):013411}
+		
+		\endsong
+		
+	\end{songs}
+	
+\end{document}
