@@ -1,0 +1,78 @@
+\documentclass[10pt,a5paper]{book}
+\usepackage[bookmarks]{hyperref}
+\usepackage[outer=1.0cm,inner=1.8cm,top=1.8cm,bottom=1.5cm]{geometry}
+\usepackage[portuguese]{babel}
+\usepackage[chorded,onesongcolumn]{songs}
+
+% Configuração do cabeçalho e rodapé com fancyhdr
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyhead[LE,RO]{\sffamily\small Songbook Legião Urbana - Real Sigma Music} % Cabeçalho dinâmico
+\fancyfoot[C]{\sffamily\thepage} % Número de página centralizado no rodapé
+\renewcommand{\headrulewidth}{1pt} % Linha horizontal no cabeçalho
+\renewcommand{\footrulewidth}{1pt} % Linha horizontal no rodapé
+\pagestyle{fancy}
+
+% Configuração do hyperref (links sem cores e sem bordas)
+\hypersetup{
+	colorlinks=false,
+	pdfborder={0 0 0}
+}
+
+% Personalização dos índices do pacote songs
+\renewcommand{\idxheadfont}{\sffamily\bfseries\LARGE} % Cabeçalho
+\renewcommand{\idxtitlefont}{\sffamily\normalsize} % Título das músicas
+
+% Personalização do layout do songbook
+\setlength{\songnumwidth}{1cm} % Largura da caixa de número da música
+\renewcommand{\stitlefont}{\sffamily\bfseries\LARGE} % Fonte do título da música
+\renewcommand{\extendprelude}{
+	\sffamily\small % Tamanho da fonte do prelude
+	\showrefs % Exibe referências bíblicas
+	\showauthors % Exibe autores
+	{\sffamily\songcopyright\par}
+}
+\renewcommand{\makepostlude}{\resettitles} % Limpa títulos ao final da música
+
+% Configuração das fontes e espaçamentos para acordes e letras
+\renewcommand{\printchord}[1]{\sffamily\bfseries\normalsize#1} % Fonte dos acordes
+\renewcommand{\lyricfont}{\sffamily\normalsize} % Fonte da letra da música
+\renewcommand{\clineparams}{\baselineskip=10pt} % Espaço entre acorde e letra
+\renewcommand{\sharpsymbol}{\#} % sustenido
+\renewcommand{\flatsymbol}{b} % bemol
+
+% Outras configurações do pacote songs
+\setlength{\cbarwidth}{1pt}  % Largura da barra vertical (refrão)
+\setlength{\sbarheight}{0pt} % Altura da barra horizontal entre as músicas
+\newindex{index}{index} % Definição do índice para as músicas
+\minfrets=5 % Número mínimo de trastes no \gtab{}
+
+\begin{document}
+	
+\title{\rmfamily\bfseries\Huge Songbook \\ Legião Urbana 
+    \vfill
+    \sffamily\small --- Real Sigma Music ---}
+\author{\sffamily\small Samuel Santana}
+\date{\sffamily\small\today}
+
+\maketitle
+
+\thispagestyle{empty}
+\cleardoublepage
+
+\showindex[1]{\sffamily Sumário}{index}
+\indexsongsas{index}{\thepage}
+
+\begin{songs}{index}
+
+\include{Músicas/Será} \brk
+\include{Músicas/Tempo Perdido} \brk
+\include{Músicas/Ainda É Cedo} \brk
+\include{Músicas/Pais E Filhos} \brk
+\include{Músicas/Vento No Litoral} \brk
+\include{Músicas/Mais Uma Vez} \brk
+\include{Músicas/Que País É Este?} \brk
+
+\end{songs}
+	
+\end{document}
