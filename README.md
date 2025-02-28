@@ -1,4 +1,8 @@
-# Licença
+# Documentação (não oficial)
+
+Esta documentação foi criada por mim, e portanto não está completa, se precisar de algo que não tem aqui, você pode encontrar na [Documentação oficial](https://songs.sourceforge.net/songs.pdf).
+
+## Licença
 
 O pacote [songs](https://songs.sourceforge.net/docs.html) é distribuído sob a **GNU General Public License v2**. Você pode redistribuí-lo e/ou modificá-lo conforme necessário, desde que siga os termos da licença.
 
