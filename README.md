@@ -4,7 +4,7 @@ Esta documentação foi criada por mim, e portanto não está completa, se preci
 
 ## Licença
 
-O pacote [songs](https://songs.sourceforge.net/docs.html) é distribuído sob a **GNU General Public License v2**. Você pode redistribuí-lo e/ou modificá-lo conforme necessário, desde que siga os termos da licença.
+O pacote [songs](https://songs.sourceforge.net/index.html) é distribuído sob a **GNU General Public License v2**. Você pode redistribuí-lo e/ou modificá-lo conforme necessário, desde que siga os termos da licença.
 
 # Instalação
 
@@ -81,7 +81,7 @@ No Linux, a distribuição LaTeX mais comum é o TeX Live. Você pode instalá-l
 \usepackage[chorded]{songs}
 
 \begin{document}
-	
+
 \begin{songs}{}
 
 \beginsong{Título da música}[
@@ -96,7 +96,7 @@ No Linux, a distribuição LaTeX mais comum é o TeX Live. Você pode instalá-l
 \endsong 
 
 \end{songs} 
-	
+
 \end{document}
 ```
 
@@ -108,7 +108,7 @@ pdflatex meu_documento.tex
 
 ![](assets/ex_01.png)
 
-# Inicialização e Opções
+## Inicialização e Opções
 
 O pacote `songs` oferece várias opções para personalizar o tipo de livro de músicas que será gerado. Essas opções são especificadas no comando `\usepackage` no preâmbulo do documento LaTeX.
 
@@ -121,21 +121,28 @@ O pacote `songs` oferece várias opções para personalizar o tipo de livro de m
 O pacote pode produzir quatro tipos principais de livros:
 
 1. **Livros de Letras (`lyric`)** : Exibem apenas as letras das músicas, omitindo os acordes.
-```latex
-\usepackage[lyrics]{songs}
-```
+   
+   ```latex
+   \usepackage[lyrics]{songs}
+   ```
+
 2. **Livros de Acordes (`chorded`)** : Incluem tanto as letras quanto os acordes, além de informações adicionais para músicos (como notas musicais).
-```latex
-\usepackage[chorded]{songs}
-```
+   
+   ```latex
+   \usepackage[chorded]{songs}
+   ```
+
 3. **Slides para Projeção (`slides`)** : Formata as músicas em slides grandes, centralizados, uma música por página, adequados para projeção em cultos ou eventos.
-```latex
-\usepackage[slides]{songs}
-```
+   
+   ```latex
+   \usepackage[slides]{songs}
+   ```
+
 4. **Texto Simples (`rawtext`)** : Gera um arquivo de texto simples contendo apenas as letras das músicas, sem acordes.
-```latex
-\usepackage[rawtext]{songs}
-```
+   
+   ```latex
+   \usepackage[rawtext]{songs}
+   ```
 
 Por padrão, se nenhuma opção for especificada, o pacote gera um **livro de acordes** (`chorded`). As opções `slides` e `chorded` podem ser combinadas para criar slides com acordes.
 
@@ -194,22 +201,22 @@ O comportamento do comando `\capo`. Normalmente, `\capo{n}` sugere o uso de um c
 \beginsong{<títulos>}[<outras informações>]
 ```
 
-- `〈títulos〉`: Um ou mais títulos da música, separados por `\\`. O primeiro título é exibido normalmente, enquanto os demais aparecem entre parênteses.
+- `<títulos>`: Um ou mais títulos da música, separados por `\\`. O primeiro título é exibido normalmente, enquanto os demais aparecem entre parênteses.
 - `[<outras informações>]`: Informações adicionais sobre a música, como autores (`by`), direitos autorais (`cr`), licenças (`li`), referências bíblicas (`sr`), etc.
 
 ```latex
 \beginsong{Título \\ Subtítulo}[
-	by={Autor, Artista, ou Compositor},
-	cr={\copyright~2025},
-	li={licença},
-	sr={Referência bíblica}]
+    by={Autor, Artista, ou Compositor},
+    cr={\copyright~2025},
+    li={licença},
+    sr={Referência bíblica}]
 ```
 
 ![](assets/ex_05.png)
 
 ## Versos e Refrões
 
-- **Versos** : São criados com os comandos `\beginverse` e `\endverse`. Por padrão, os versos são numerados, mas você pode criar versos não numerados usando `\beginverse*`.
+- **Versos** : São criados com os comandos `\beginverse` e `\endverse`. Por padrão, os versos são numerados, mas você pode criar versos não numerados usando `\beginverse*` (útil para introduções, pré refrões, pontes, finais...).
 - **Refrões** : São criados com os comandos `\beginchorus` e `\endchorus`. Refrões têm uma linha vertical à esquerda para distingui-los dos versos.
 
 Exemplo:
@@ -223,6 +230,11 @@ Letra do verso aqui. \\
 \beginverse
 Letra do verso aqui. \\
 Letra do verso aqui. \\
+\endverse
+
+\beginverse*
+Letra do pré refrão aqui. \\
+Letra do pré refrão aqui. \\
 \endverse
 
 \beginchorus
@@ -244,14 +256,25 @@ Letra do refrão aqui. \\
 
 ![](assets/ex_07.png)
 
-- **Sequências de acordes** : Sequências de acordes podem ser escritas juntas ou separadas. Ambos os exemplos abaixo produzem o mesmo resultado:
+- Vodê pode adicionar um espaço extra entre os acorde com `~`.
 
 ```latex
-\[A]\[B]\[Em]Música, músi\[C]ca. \\
-\[A B Em]Música, músi\[C]ca. \\
+\[Asus2] \[F#m7] \\
+\[Asus2] ~ \[F#m7] \\
+\[Asus2] ~~ \[F#m7] \\
+\[Asus2] ~~~ \[F#m7] \\
 ```
 
 ![](assets/ex_08.png)
+
+- Você pode colocar `()` nos acordes:
+
+```latex
+\[Asus2] \[(E/G#)] \[F#m7] \\
+\[(Asus2] \[E/G#] \[F#m7)] \\
+```
+
+![](assets/ex_09.png)
 
 ### Repetição de Acordes
 
@@ -268,8 +291,149 @@ Os ^mesmos acor^des. \\
 \endverse
 ```
 
-![](assets/ex_09.png)
+![](assets/ex_10.png)
 
-# Contribuições
+## Bemol & Sustenido
 
-Se você deseja contribuir com melhorias ou correções, visite o repositório oficial no [SourceForge](https://songs.sourceforge.net/docs.html) ou entre em contato com o autor, [Kevin W. Hamlen](https://personal.utdallas.edu/~hamlen/).
+O pacote songs define macros específicas para inserir sustenidos e bemois em acordes: 
+
+- Sustenido `(♯)` : Use o caractere `#` ou a macro `\shrp`.
+- Bemol `(♭)` : Use o caractere `&` ou a macro `\flt`.
+
+Esses símbolos podem ser usados diretamente dentro dos comandos de acordes, como `\[]`. Por exemplo: 
+
+```latex
+\[G\shrp] ou \[G#] \\
+\[A\flt] ou \[A&] \\
+```
+
+![](assets/ex_11.png)
+
+## Mais exemplos com acordes:
+
+```latex
+\[E&]paz e \[Am]alegria \\
+```
+
+![](assets/ex_12.png)
+
+```latex
+\[E&]paz e \[Am] alegria \\
+```
+
+![](assets/ex_13.png)
+
+```latex
+\[F#sus4]e\[A]ternal \\
+```
+
+![](assets/ex_14.png)
+
+```latex
+\[A]\[B]\[Em]Alegria. \\
+\[A B Em]Alegria. \\
+```
+
+![](assets/ex_15.png)
+
+```latex
+{\[C D]e}ter\[Em]nal \\
+```
+
+![](assets/ex_16.png)
+
+```latex
+\[Gmaj7sus4]{Vida eternal} \\
+\[Gmaj7sus4]Vida eternal \\
+```
+
+![](assets/ex_17.png)
+
+Para usar o `\nolyrics`, coloque-o dentro de um ambiente de verso (`\beginverse ... \endverse`) ou refrão (`\beginchorus ... \endchorus`). Tudo o que estiver dentro do escopo do `\nolyrics` será tratado como uma linha de acordes sem letras.
+
+```latex
+\beginverse*
+{\nolyrics Intro: \[G] \[C] \[D]} \\
+\endverse
+```
+
+![](assets/ex_18.png)
+
+```latex
+\beginverse*
+{\nolyrics \[G] \[C] \[D]} Letra da \[Em]música. \\
+\endverse
+```
+
+![](assets/ex_19.png)
+
+## Eco e Repeticões
+
+Comando `\echo{<lyrics and chords>}` : 
+
+- Usado para criar partes de eco, que são tipicamente usadas em músicas onde uma frase é repetida por um grupo (como um coro) após ser cantada por um solista.
+- As partes de eco são formatadas entre parênteses e em itálico para distingui-las visualmente no texto.
+
+```LaTeX
+Alle\[G]luia! \echo{Alle\[A]luia!} \\
+```
+
+![](assets/ex_20.png)
+
+Comando `\rep{<n>}`: 
+
+- Usado para indicar que uma linha deve ser repetida um certo número de vezes (`<n>`) por todos os cantores.
+- O número de repetições é exibido entre parênteses após a linha, com o símbolo "`×`" seguido pelo número.
+
+```latex
+Alle\[G]lui\[D]a! \rep{4} \\
+```
+
+![](assets/ex_21.png)
+
+## Diagrama de acordes
+
+O comando principal para criar diagramas de tablatura é `\gtab`. Ele tem a seguinte sintaxe:
+
+```latex
+\gtab{<chord>}{<fret>:<strings>:<fingering>}
+```
+
+- **`<chord>`** : O nome do acorde que será exibido acima do diagrama.
+- **`<fret>`** : (Opcional) Um número que indica o traste inicial do diagrama (por exemplo, "2" para começar no segundo traste).
+- **`<strings>`** : Uma sequência de símbolos que descreve como cada corda deve ser tocada:
+  - `X`: A corda não deve ser tocada.
+  - `0` ou `O`: A corda deve ser tocada aberta (sem pressionar nenhum traste).
+  - Números (`1` a `9`): Indicam o traste onde a corda deve ser pressionada.
+- **`<fingering>`** : (Opcional) Informações sobre qual dedo usar para pressionar cada corda.
+
+```latex
+\gtab{A}{}
+```
+
+![](assets/ex_22.png)
+
+```latex
+\gtab{A}{X02220:001230}
+```
+
+![](assets/ex_23.png)
+
+```latex
+\gtab{F}{(133211)}
+\gtab{F}{(133211):143211}
+```
+
+![](assets/ex_24.png)
+
+```latex
+\gtab{B&}{(688766)}
+```
+
+![](assets/ex_25.png)
+
+```latex
+\gtab{B&}{6:(133211)}
+```
+
+![](assets/ex_26.png)
