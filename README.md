@@ -77,25 +77,22 @@ No Linux, a distribuição LaTeX mais comum é o TeX Live. Você pode instalá-l
 \usepackage[chorded]{songs}
 
 \begin{document}
-
+	
 \begin{songs}{}
 
 \beginsong{Título da música}[
-    by={Artista ou Autor},
-    sr={João 3:16},
-    cr={Public domain.}] 
+  by={Artista ou Autor},
+  sr={João 3:16},
+  cr={Domínio público}] 
 
 \beginverse
-Para\[C]béns pra vo\[G]cê \\
-Nesta \[G7]data que\[C]rida \\
-Muitas \[C7]felicida\[F]des \\
-Muitos \[C]a\[G]nos de \[C]vida \\
+\[Dm7]Letra \[G7]de uma \[Cmaj7]música. \\
 \endverse 
 
 \endsong 
 
 \end{songs} 
-
+	
 \end{document}
 ```
 
@@ -120,9 +117,21 @@ O pacote `songs` oferece várias opções para personalizar o tipo de livro de m
 O pacote pode produzir quatro tipos principais de livros:
 
 1. **Livros de Letras (`lyric`)** : Exibem apenas as letras das músicas, omitindo os acordes.
+```latex
+\usepackage[lyrics]{songs}
+```
 2. **Livros de Acordes (`chorded`)** : Incluem tanto as letras quanto os acordes, além de informações adicionais para músicos (como notas musicais).
+```latex
+\usepackage[chorded]{songs}
+```
 3. **Slides para Projeção (`slides`)** : Formata as músicas em slides grandes, centralizados, uma música por página, adequados para projeção em cultos ou eventos.
+```latex
+\usepackage[slides]{songs}
+```
 4. **Texto Simples (`rawtext`)** : Gera um arquivo de texto simples contendo apenas as letras das músicas, sem acordes.
+```latex
+\usepackage[rawtext]{songs}
+```
 
 Por padrão, se nenhuma opção for especificada, o pacote gera um **livro de acordes** (`chorded`). As opções `slides` e `chorded` podem ser combinadas para criar slides com acordes.
 
@@ -132,18 +141,15 @@ O comportamento do comando `\capo`. Normalmente, `\capo{n}` sugere o uso de um c
 
 ```latex
 \beginsong{Título da música}[
-    by={Artista ou Autor},
-    sr={João 3:16},
-    cr={Public domain.}]
+  by={Artista ou Autor},
+  sr={João 3:16},
+  cr={Domínio público}] 
 
-\capo{2}
+\capo{1}
 
 \beginverse
-Para\[C]béns pra vo\[G]cê \\
-Nesta \[G7]data que\[C]rida \\
-Muitas \[C7]felicida\[F]des \\
-Muitos \[C]a\[G]nos de \[C]vida \\
-\endverse
+\[Dm7]Letra \[G7]de uma \[Cmaj7]música. \\
+\endverse 
 
 \endsong
 ```
@@ -158,7 +164,7 @@ Muitos \[C]a\[G]nos de \[C]vida \\
 
 ![](assets/ex_03.png)
 
-## Caixas Sombreadas
+## Caixas de Título
 
 - A opção `noshading` remove todas as caixas sombreadas, como aquelas ao redor dos números das músicas ou notas textuais. Isso pode ser útil se essas caixas causarem problemas de impressão ou consumirem muita tinta.
 
@@ -237,8 +243,8 @@ Letra do refrão aqui. \\
 - **Sequências de acordes** : Sequências de acordes podem ser escritas juntas ou separadas. Ambos os exemplos abaixo produzem o mesmo resultado:
 
 ```latex
-\[A]\[B]\[Em]Música. \\
-\[A B Em]Música. \\
+\[A]\[B]\[Em]Música, músi\[C]ca. \\
+\[A B Em]Música, músi\[C]ca. \\
 ```
 
 ![](assets/ex_08.png)
@@ -249,11 +255,12 @@ Letra do refrão aqui. \\
 
 ```latex
 \beginverse
-\[G]Pri\[Em]meiro \[C]ver\[D]so.
+\[G]Pri\[Em]meiro \[C]ver\[D]so. \\
 \endverse
 
 \beginverse
-^Segundo verso ^com os ^mesmos acor^des.
+^Segundo verso ^com \\
+Os ^mesmos acor^des. \\
 \endverse
 ```
 
