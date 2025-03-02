@@ -1,14 +1,44 @@
-# Documentação
+# Sumário
 
-Esta documentação foi criada de forma independente e, portanto, pode não abordar todos os tópicos ou recursos disponíveis. Caso você não encontre aqui as informações que precisa, consulte a [Documentação Oficial](https://songs.sourceforge.net/songs.pdf) para obter detalhes completos e atualizados.
+1. [Introdução](#introdução)  
+2. [Licença](#licença)  
+3. [Instalação](#instalação)  
+   - [macOS](#instalação-no-macos)  
+   - [Windows](#instalação-no-windows)  
+   - [Linux](#instalação-no-linux)  
+4. [Compilação do Documento](#compilação-do-documento)  
+5. [Inicialização e Opções](#inicialização-e-opções)  
+6. [Tipos de Saída](#tipos-de-saída)  
+7. [Capotraste](#capotraste)  
+8. [Caixas de Título](#caixas-de-título)  
+9. [Estrutura de Músicas](#estrutura-de-músicas)  
+   - [Ambiente `songs`](#ambiente-songs)  
+   - [Comando `\beginsong`](#comando-beginsong)  
+   - [Versos e Refrões](#versos-e-refrões)  
+   - [Acordes](#acordes)  
+   - [Repetição de Acordes](#repetição-de-acordes)  
+   - [Bemol & Sustenido](#bemol--sustenido)  
+   - [Mais Exemplos com Acordes](#mais-exemplos-com-acordes)  
+   - [Eco e Repetições](#eco-e-repetições)  
+10. [Diagrama de Acordes](#diagrama-de-acordes)  
 
-## Licença
+---
+
+# Introdução
+
+Esta documentação foi criada de forma independente e pode não abordar todos os tópicos ou recursos disponíveis. Para obter informações completas e atualizadas, consulte a [Documentação Oficial](https://songs.sourceforge.net/songs.pdf).
+
+---
+
+# Licença
 
 O pacote [songs](https://songs.sourceforge.net/index.html) é distribuído sob a **GNU General Public License v2**. Você pode redistribuí-lo e/ou modificá-lo conforme necessário, desde que siga os termos da licença.
 
+---
+
 # Instalação
 
-A instalação do pacote LaTeX `songs` pode ser feita em sistemas operacionais como macOS, Windows e Linux. 
+A instalação do pacote LaTeX `songs` pode ser feita em sistemas operacionais como macOS, Windows e Linux. Abaixo estão as instruções detalhadas para cada plataforma.
 
 ## Instalação no macOS
 
@@ -53,7 +83,7 @@ No Linux, a distribuição LaTeX mais comum é o TeX Live. Você pode instalá-l
   
   O pacote `texlive-full` inclui todos os pacotes LaTeX disponíveis, incluindo o `songs`.
 
-- **Fedora**:
+- **Fedora**: 
   
   ```bash
   sudo dnf install texlive-scheme-full
@@ -72,7 +102,9 @@ No Linux, a distribuição LaTeX mais comum é o TeX Live. Você pode instalá-l
   sudo tlmgr install songs
   ```
 
-## Compilando o documento
+---
+
+# Compilação do Documento
 
 **Exemplo:**
 
@@ -108,37 +140,41 @@ pdflatex meu_documento.tex
 
 ![](assets/ex_01.png)
 
-## Inicialização e Opções
+---
+
+# Inicialização e Opções
 
 O pacote `songs` oferece várias opções para personalizar o tipo de livro de músicas que será gerado. Essas opções são especificadas no comando `\usepackage` no preâmbulo do documento LaTeX.
 
 ```latex
-\usepackage[<options>]{songs}
+\usepackage[]{songs}
 ```
 
-## Tipos de Saída
+---
+
+# Tipos de Saída
 
 O pacote pode produzir quatro tipos principais de livros:
 
-1. **Livros de Letras (`lyric`)** : Exibem apenas as letras das músicas, omitindo os acordes.
+1. **Livros de Letras (`lyric`)**: Exibem apenas as letras das músicas, omitindo os acordes.
    
    ```latex
    \usepackage[lyrics]{songs}
    ```
 
-2. **Livros de Acordes (`chorded`)** : Incluem tanto as letras quanto os acordes, além de informações adicionais para músicos (como notas musicais).
+2. **Livros de Acordes (`chorded`)**: Incluem tanto as letras quanto os acordes, além de informações adicionais para músicos (como notas musicais).
    
    ```latex
    \usepackage[chorded]{songs}
    ```
 
-3. **Slides para Projeção (`slides`)** : Formata as músicas em slides grandes, centralizados, uma música por página, adequados para projeção em cultos ou eventos.
+3. **Slides para Projeção (`slides`)**: Formata as músicas em slides grandes, centralizados, uma música por página, adequados para projeção em cultos ou eventos.
    
    ```latex
    \usepackage[slides]{songs}
    ```
 
-4. **Texto Simples (`rawtext`)** : Gera um arquivo de texto simples contendo apenas as letras das músicas, sem acordes.
+4. **Texto Simples (`rawtext`)**: Gera um arquivo de texto simples contendo apenas as letras das músicas, sem acordes.
    
    ```latex
    \usepackage[rawtext]{songs}
@@ -146,9 +182,11 @@ O pacote pode produzir quatro tipos principais de livros:
 
 Por padrão, se nenhuma opção for especificada, o pacote gera um **livro de acordes** (`chorded`). As opções `slides` e `chorded` podem ser combinadas para criar slides com acordes.
 
-## Capotraste
+---
 
-O comportamento do comando `\capo`. Normalmente, `\capo{n}` sugere o uso de um capo no traste `n` para guitarristas. 
+# Capotraste
+
+O comportamento do comando `\capo`. Normalmente, `\capo{n}` sugere o uso de um capo no traste `n` para guitarristas.
 
 ```latex
 \beginsong{Título da música}[
@@ -175,7 +213,9 @@ O comportamento do comando `\capo`. Normalmente, `\capo{n}` sugere o uso de um c
 
 ![](assets/ex_03.png)
 
-## Caixas de Título
+---
+
+# Caixas de Título
 
 - A opção `noshading` remove todas as caixas sombreadas, como aquelas ao redor dos números das músicas ou notas textuais. Isso pode ser útil se essas caixas causarem problemas de impressão ou consumirem muita tinta.
 
@@ -185,24 +225,30 @@ O comportamento do comando `\capo`. Normalmente, `\capo{n}` sugere o uso de um c
 
 ![](assets/ex_04.png)
 
-# Música
+---
 
-- **Ambiente `songs`** : As músicas devem ser colocadas dentro de um ambiente `songs`, que é definido por:
+# Estrutura de Músicas
+
+## Ambiente `songs`
+
+As músicas devem ser colocadas dentro de um ambiente `songs`, que é definido por:
 
 ```latex
-\begin{songs}{<índice>}
+\begin{songs}{ }
 ...
 \end{songs}
 ```
 
-- **Comando `\beginsong`** : Define o início de uma música. A sintaxe básica é:
+## Comando `\beginsong`
+
+Define o início de uma música. A sintaxe básica é:
 
 ```latex
-\beginsong{<títulos>}[<outras informações>]
+\beginsong{ }[ ]
 ```
 
-- `<títulos>`: Um ou mais títulos da música, separados por `\\`. O primeiro título é exibido normalmente, enquanto os demais aparecem entre parênteses.
-- `[<outras informações>]`: Informações adicionais sobre a música, como autores (`by`), direitos autorais (`cr`), licenças (`li`), referências bíblicas (`sr`), etc.
+- ` `: Um ou mais títulos da música, separados por `\\`. O primeiro título é exibido normalmente, enquanto os demais aparecem entre parênteses.
+- `[ ]`: Informações adicionais sobre a música, como autores (`by`), direitos autorais (`cr`), licenças (`li`), referências bíblicas (`sr`), etc.
 
 ```latex
 \beginsong{Título \\ Subtítulo}[
@@ -216,8 +262,8 @@ O comportamento do comando `\capo`. Normalmente, `\capo{n}` sugere o uso de um c
 
 ## Versos e Refrões
 
-- **Versos** : São criados com os comandos `\beginverse` e `\endverse`. Por padrão, os versos são numerados, mas você pode criar versos não numerados usando `\beginverse*` (útil para introduções, pré refrões, pontes, finais...).
-- **Refrões** : São criados com os comandos `\beginchorus` e `\endchorus`. Refrões têm uma linha vertical à esquerda para distingui-los dos versos.
+- **Versos**: São criados com os comandos `\beginverse` e `\endverse`. Por padrão, os versos são numerados, mas você pode criar versos não numerados usando `\beginverse*` (útil para introduções, pré-refrões, pontes, finais...).
+- **Refrões**: São criados com os comandos `\beginchorus` e `\endchorus`. Refrões têm uma linha vertical à esquerda para distingui-los dos versos.
 
 Exemplo:
 
@@ -233,8 +279,8 @@ Letra do verso aqui. \\
 \endverse
 
 \beginverse*
-Letra do pré refrão aqui. \\
-Letra do pré refrão aqui. \\
+Letra do pré-refrão aqui. \\
+Letra do pré-refrão aqui. \\
 \endverse
 
 \beginchorus
@@ -247,8 +293,8 @@ Letra do refrão aqui. \\
 
 ## Acordes
 
-- **Sintaxe dos acordes** : Os acordes são inseridos com o comando `\[<nome do acorde>]`. Eles só aparecem em livros de acordes (`chorded`) e são omitidos em livros de letras (`lyric`).
-- **Texto sob acordes** : Qualquer texto imediatamente após o acorde (sem espaço) será posicionado diretamente abaixo dele. Espaços ou quebras de linha indicam que o acorde deve ser tocado entre palavras.
+- **Sintaxe dos acordes**: Os acordes são inseridos com o comando `\[ ]`. Eles só aparecem em livros de acordes (`chorded`) e são omitidos em livros de letras (`lyric`).
+- **Texto sob acordes**: Qualquer texto imediatamente após o acorde (sem espaço) será posicionado diretamente abaixo dele. Espaços ou quebras de linha indicam que o acorde deve ser tocado entre palavras.
 
 ```latex
 \[G]Letra \[C]da \[G]música. \\
@@ -256,29 +302,11 @@ Letra do refrão aqui. \\
 
 ![](assets/ex_07.png)
 
-- Vodê pode adicionar um espaço extra entre os acorde com `~`.
+---
 
-```latex
-\[Asus2] \[F#m7] \\
-\[Asus2] ~ \[F#m7] \\
-\[Asus2] ~~ \[F#m7] \\
-\[Asus2] ~~~ \[F#m7] \\
-```
+# Repetição de Acordes
 
-![](assets/ex_08.png)
-
-- Você pode colocar `()` nos acordes:
-
-```latex
-\[Asus2] \[(E/G#)] \[F#m7] \\
-\[(Asus2] \[E/G#] \[F#m7)] \\
-```
-
-![](assets/ex_09.png)
-
-### Repetição de Acordes
-
-- **Repetição de acordes** : Para evitar repetir acordes em versos subsequentes, use o símbolo `^` no lugar do acorde. O pacote automaticamente reproduzirá o acorde correspondente do primeiro verso.
+Para evitar repetir acordes em versos subsequentes, use o símbolo `^` no lugar do acorde. O pacote automaticamente reproduzirá o acorde correspondente do primeiro verso.
 
 ```latex
 \beginverse
@@ -293,14 +321,16 @@ Os ^mesmos acor^des. \\
 
 ![](assets/ex_10.png)
 
-## Bemol & Sustenido
+---
 
-O pacote songs define macros específicas para inserir sustenidos e bemois em acordes: 
+# Bemol & Sustenido
 
-- Sustenido `(♯)` : Use o caractere `#` ou a macro `\shrp`.
-- Bemol `(♭)` : Use o caractere `&` ou a macro `\flt`.
+O pacote `songs` define macros específicas para inserir sustenidos e bemois em acordes:
 
-Esses símbolos podem ser usados diretamente dentro dos comandos de acordes, como `\[]`. Por exemplo: 
+- Sustenido `(♯)`: Use o caractere `#` ou a macro `\shrp`.
+- Bemol `(♭)`: Use o caractere `&` ou a macro `\flt`.
+
+Esses símbolos podem ser usados diretamente dentro dos comandos de acordes, como `\[]`. Por exemplo:
 
 ```latex
 \[G\shrp] ou \[G#] \\
@@ -309,7 +339,9 @@ Esses símbolos podem ser usados diretamente dentro dos comandos de acordes, com
 
 ![](assets/ex_11.png)
 
-## Mais exemplos com acordes:
+---
+
+# Mais Exemplos com Acordes
 
 ```latex
 \[E&]paz e \[Am]alegria \\
@@ -317,72 +349,24 @@ Esses símbolos podem ser usados diretamente dentro dos comandos de acordes, com
 
 ![](assets/ex_12.png)
 
-```latex
-\[E&]paz e \[Am] alegria \\
-```
+---
 
-![](assets/ex_13.png)
+# Eco e Repetições
 
-```latex
-\[F#sus4]e\[A]ternal \\
-```
-
-![](assets/ex_14.png)
-
-```latex
-\[A]\[B]\[Em]Alegria. \\
-\[A B Em]Alegria. \\
-```
-
-![](assets/ex_15.png)
-
-```latex
-{\[C D]e}ter\[Em]nal \\
-```
-
-![](assets/ex_16.png)
-
-```latex
-\[Gmaj7sus4]{Vida eternal} \\
-\[Gmaj7sus4]Vida eternal \\
-```
-
-![](assets/ex_17.png)
-
-Para usar o `\nolyrics`, coloque-o dentro de um ambiente de verso (`\beginverse ... \endverse`) ou refrão (`\beginchorus ... \endchorus`). Tudo o que estiver dentro do escopo do `\nolyrics` será tratado como uma linha de acordes sem letras.
-
-```latex
-\beginverse*
-{\nolyrics Intro: \[G] \[C] \[D]} \\
-\endverse
-```
-
-![](assets/ex_18.png)
-
-```latex
-\beginverse*
-{\nolyrics \[G] \[C] \[D]} Letra da \[Em]música. \\
-\endverse
-```
-
-![](assets/ex_19.png)
-
-## Eco e Repeticões
-
-Comando `\echo{<lyrics and chords>}` : 
+Comando `\echo{ }`:
 
 - Usado para criar partes de eco, que são tipicamente usadas em músicas onde uma frase é repetida por um grupo (como um coro) após ser cantada por um solista.
 - As partes de eco são formatadas entre parênteses e em itálico para distingui-las visualmente no texto.
 
-```LaTeX
+```latex
 Alle\[G]luia! \echo{Alle\[A]luia!} \\
 ```
 
 ![](assets/ex_20.png)
 
-Comando `\rep{<n>}`: 
+Comando `\rep{ }`:
 
-- Usado para indicar que uma linha deve ser repetida um certo número de vezes (`<n>`) por todos os cantores.
+- Usado para indicar que uma linha deve ser repetida um certo número de vezes (` `) por todos os cantores.
 - O número de repetições é exibido entre parênteses após a linha, com o símbolo "`×`" seguido pelo número.
 
 ```latex
@@ -391,49 +375,26 @@ Alle\[G]lui\[D]a! \rep{4} \\
 
 ![](assets/ex_21.png)
 
-## Diagrama de acordes
+---
+
+# Diagrama de Acordes
 
 O comando principal para criar diagramas de tablatura é `\gtab`. Ele tem a seguinte sintaxe:
 
 ```latex
-\gtab{<chord>}{<fret>:<strings>:<fingering>}
+\gtab{ }{ : : }
 ```
 
-- **`<chord>`** : O nome do acorde que será exibido acima do diagrama.
-- **`<fret>`** : (Opcional) Um número que indica o traste inicial do diagrama (por exemplo, "2" para começar no segundo traste).
-- **`<strings>`** : Uma sequência de símbolos que descreve como cada corda deve ser tocada:
+- **` `**: O nome do acorde que será exibido acima do diagrama.
+- **` `**: (Opcional) Um número que indica o traste inicial do diagrama (por exemplo, "2" para começar no segundo traste).
+- **` `**: Uma sequência de símbolos que descreve como cada corda deve ser tocada:
   - `X`: A corda não deve ser tocada.
   - `0` ou `O`: A corda deve ser tocada aberta (sem pressionar nenhum traste).
   - Números (`1` a `9`): Indicam o traste onde a corda deve ser pressionada.
-- **`<fingering>`** : (Opcional) Informações sobre qual dedo usar para pressionar cada corda.
+- **` `**: (Opcional) Informações sobre qual dedo usar para pressionar cada corda.
 
 ```latex
 \gtab{A}{}
 ```
 
 ![](assets/ex_22.png)
-
-```latex
-\gtab{A}{X02220:001230}
-```
-
-![](assets/ex_23.png)
-
-```latex
-\gtab{F}{(133211)}
-\gtab{F}{(133211):143211}
-```
-
-![](assets/ex_24.png)
-
-```latex
-\gtab{B&}{(688766)}
-```
-
-![](assets/ex_25.png)
-
-```latex
-\gtab{B&}{6:(133211)}
-```
-
-![](assets/ex_26.png)
