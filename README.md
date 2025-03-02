@@ -1,6 +1,6 @@
-# Documentação (não oficial)
+# Documentação
 
-Esta documentação foi criada por mim, e portanto não está completa, se precisar de algo que não tem aqui, você pode encontrar na [Documentação oficial](https://songs.sourceforge.net/songs.pdf).
+Esta documentação foi criada de forma independente e, portanto, pode não abordar todos os tópicos ou recursos disponíveis. Caso você não encontre aqui as informações que precisa, consulte a [Documentação Oficial](https://songs.sourceforge.net/songs.pdf) para obter detalhes completos e atualizados.
 
 ## Licença
 
